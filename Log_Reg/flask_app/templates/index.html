@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Registration</title>
+    <style>
+        .custom-box {
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(243, 243, 249, 0.617);
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-5 p-4 bg-dark text-light border-light custom-box">
+                <form action="/register" method="post">
+                    <h2 class="text-body">Register</h2>
+                    {% with messages = get_flashed_messages(category_filter=['register']) %}
+                        {% if messages %}
+                            <div class="alert alert-danger" role="alert">
+                                <strong>Incorrect!</strong>
+                                {% for message in messages %}
+                                    <p>{{message}}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+                    <div class="mb-3">
+                        <label for="first_name" class="form-group">First Name:</label>
+                        <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Enter First Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="last_name" class="form-group">Last Name:</label>
+                        <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Enter Last Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-group">Email:</label>
+                        <input type="text" name="email" class="form-control" id="email" placeholder="Enter Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-group">Password:</label>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirm" class="form-group">Confirm password:</label>
+                        <input type="password" name="confirm" class="form-control" id="confirm" placeholder="Confirm Password" required>
+                    </div>
+                    <input type="submit" value="Register" class="btn btn-primary">
+                </form>
+            </div>
+            <div class="col-5 p-4 bg-dark text-light border-light custom-box">
+                <form action="/login" method="post">
+                    <h2 class="text-body">Login</h2>
+                    {% with messages = get_flashed_messages(category_filter=['login']) %}
+                        {% if messages %}
+                            <div class="alert alert-danger" role="alert">
+                                <strong>Account does not exist</strong>
+                                {% for message in messages %}
+                                    <p>{{message}}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+                    <div class="mb-3">
+                        <label for="email" class="form-group">Email:</label>
+                        <input type="text" name="email" class="form-control" id="email" placeholder="Enter Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-group">Password:</label>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password" required>
+                    </div>
+                    <input type="submit" value="Login" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
