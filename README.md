@@ -3,7 +3,8 @@ Registration and Login form page.
 *This is a small project and practice of HTML + Bootstrap + Python + MySQL + Flask + Flask-bcrypt, it is of personal use only, to showcase and track my progress as an independent developer.*
 
 - On this project, I created and designed a Registration and Login form. It can be used for websites, social medias, blogs, etc.
-_ Flask-bcrypt is included for passwords. Bcrypt is a cryptographic hash function designed for password hashing and safe storing in the backend of applications in a way that is less susceptible to dictionary-based cyberattacks.
+  
+-Flask-bcrypt is included for passwords. Bcrypt is a cryptographic hash function designed for password hashing and safe storing in the backend of applications in a way that is less susceptible to dictionary-based cyberattacks.
 
 
 - Below are screenshots of the front end.
